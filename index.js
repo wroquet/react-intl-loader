@@ -13,8 +13,9 @@ module.exports.pitch = function (remainingRequest) {
   return [
     'var addLocaleData = require("react-intl").addLocaleData;',
     'var areIntlLocalesSupported = require("intl-locales-supported");',
+    'areIntlLocalesSupported = typeof areIntlLocalesSupported === "function" ? areIntlLocalesSupported : areIntlLocalesSupported.default',
     'module.exports = function (cb) {',
-    '  if (areIntlLocalesSupported("' + locale + '")) {',
+    '  if (areIntlLocalesSupported && areIntlLocalesSupported("' + locale + '")) {',
     '    require.ensure([',
     '      "react-intl/locale-data/' + locale + '",',
     '      ' + req,
