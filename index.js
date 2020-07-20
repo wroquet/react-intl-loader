@@ -12,9 +12,9 @@ module.exports.pitch = function (remainingRequest) {
 
   return [
     'var addLocaleData = require("react-intl").addLocaleData;',
-    'var isIntlLocaleSupported = require("intl-locales-supported");',
+    'var areIntlLocalesSupported = require("intl-locales-supported");',
     'module.exports = function (cb) {',
-    '  if (isIntlLocaleSupported("' + locale + '")) {',
+    '  if (areIntlLocalesSupported("' + locale + '")) {',
     '    require.ensure([',
     '      "react-intl/locale-data/' + locale + '",',
     '      ' + req,
